@@ -14,6 +14,7 @@ logger = logging.getLogger(__name__)
 @dataclass(frozen=True)
 class Report:
     cliente_nome: str
+    canal: str | None
     lote_id: int
     arquivo: str | None
     data_lote: datetime

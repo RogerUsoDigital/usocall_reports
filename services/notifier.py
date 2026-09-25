@@ -36,6 +36,7 @@ class Notifier:
             "tipo_alerta": "erro_alto",
             "lote_id": report.lote_id,
             "cliente": report.cliente_nome,
+            "canal": report.canal,
             "arquivo": report.arquivo,
             "data_lote": Notifier._serializar(report.data_lote),
             "percentual_erro": float(report.percentual_erro),
@@ -48,7 +49,6 @@ class Notifier:
             "entregue_meta": report.entregue_meta,
             "lidos_meta": report.lidos_meta,
             "erro_meta": report.erro_meta,
-            "canal": report.canal,
         }
 
     @staticmethod
