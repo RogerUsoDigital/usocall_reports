@@ -37,6 +37,7 @@ class Notifier:
             "lote_id": report.lote_id,
             "cliente": report.cliente_nome,
             "canal": report.canal,
+            "usuario_nome": report.usuario_nome,
             "arquivo": report.arquivo,
             "data_lote": Notifier._serializar(report.data_lote),
             "percentual_erro": float(report.percentual_erro),
