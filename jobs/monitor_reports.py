@@ -1,6 +1,6 @@
 """Job executável por cron: monitora erros altos dos lotes UsoCall."""
 
-from dateparser import date
+from datetime import date
 import logging
 
 from repositories.monitoramento_repository import MonitoramentoRepository
