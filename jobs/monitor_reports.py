@@ -1,5 +1,6 @@
 """Job executável por cron: monitora erros altos dos lotes UsoCall."""
 
+from dateparser import date
 import logging
 
 from repositories.monitoramento_repository import MonitoramentoRepository
@@ -19,7 +20,7 @@ def main() -> dict[str, int]:
         report_repository = ReportRepository()
         monitoramento_repository = MonitoramentoRepository()
         notifier = Notifier()
-        reports = report_repository.buscar_relatorios_do_dia()
+        reports = report_repository.buscar_relatorios_do_dia(date(2026, 9, 24))
         logger.info("%s reports encontrados", len(reports))
     except Exception:
         logger.exception("Não foi possível iniciar o monitoramento de reports")

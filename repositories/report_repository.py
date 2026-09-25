@@ -2,7 +2,7 @@
 
 import logging
 from dataclasses import dataclass
-from datetime import datetime, time, timedelta
+from datetime import date, datetime, time, timedelta
 from typing import Any
 
 from database.usocall import obter_conexao
@@ -75,8 +75,10 @@ class ReportRepository:
         ORDER BY LML_ID
     """
 
-    def buscar_relatorios_do_dia(self) -> list[Report]:
-        inicio_dia = datetime.combine(datetime.now().date(), time.min)
+    def buscar_relatorios_do_dia(self, data_referencia: date | None = None) -> list[Report]:
+        """Busca os relatórios com erro alto da data informada ou do dia atual."""
+        data_consulta = data_referencia or datetime.now().date()
+        inicio_dia = datetime.combine(data_consulta, time.min)
         fim_dia = inicio_dia + timedelta(days=1)
         conexao = None
         cursor = None
