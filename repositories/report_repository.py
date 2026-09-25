@@ -42,6 +42,7 @@ class ReportRepository:
     QUERY = """
         SELECT
             CLI_NOME AS cliente_nome,
+            TLO_DESCRICAO AS canal,
             LML_ID AS lote_id,
             LML_ARQUIVO AS arquivo,
             LML_DATA AS data_lote,

@@ -48,6 +48,7 @@ class Notifier:
             "entregue_meta": report.entregue_meta,
             "lidos_meta": report.lidos_meta,
             "erro_meta": report.erro_meta,
+            "canal": report.canal,
         }
 
     @staticmethod

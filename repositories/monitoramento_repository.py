@@ -23,17 +23,17 @@ class MonitoramentoRepository:
             INSERT INTO monitoramento_relatorios (
                 lote_id, tipo_alerta, cliente_nome, arquivo, data_lote, percentual_erro,
                 total, erro, sucesso, discando, pendente, enviado_meta, entregue_meta,
-                lidos_meta, erro_meta, status_alerta, tentativas, criado_em, atualizado_em
+                lidos_meta, erro_meta, status_alerta, tentativas, criado_em, atualizado_em, canal
             ) VALUES (
                 %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,
-                'pendente', 0, NOW(), NOW()
+                'pendente', 0, NOW(), NOW(), %s
             )
         """
         parametros = (
             report.lote_id, tipo_alerta, report.cliente_nome, report.arquivo,
             report.data_lote, report.percentual_erro, report.total, report.erro,
             report.sucesso, report.discando, report.pendente, report.enviado_meta,
-            report.entregue_meta, report.lidos_meta, report.erro_meta,
+            report.entregue_meta, report.lidos_meta, report.erro_meta, report.canal
         )
         conexao = obter_conexao()
         cursor = None
