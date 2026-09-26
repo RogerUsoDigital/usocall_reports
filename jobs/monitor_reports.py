@@ -21,8 +21,8 @@ def main() -> dict[str, int]:
         monitoramento_repository = MonitoramentoRepository()
         notifier = Notifier()
         # para teste: passar a data de incidente
-        # reports = report_repository.buscar_relatorios_do_dia(date(2026, 9, 24))
-        reports = report_repository.buscar_relatorios_do_dia()
+        reports = report_repository.buscar_relatorios_do_dia(date(2026, 9, 25))
+        # reports = report_repository.buscar_relatorios_do_dia()
         logger.info("%s reports encontrados", len(reports))
     except Exception:
         logger.exception("Não foi possível iniciar o monitoramento de reports")
